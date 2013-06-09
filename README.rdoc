@@ -1,6 +1,0 @@
-== README
-
-
-Don't mind me.
-
-Briefly reviewing Rails 4 via railstutorial.org.
