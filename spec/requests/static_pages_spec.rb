@@ -34,9 +34,9 @@ describe "StaticPages" do
   end
 
   describe "About page" do
-  	it "should have the title 'About'" do
+  	it "should have the title 'About Us'" do
   		visit '/static_pages/about'
-  		expect(page).to have_title("About | Ruby on Rails Tutorial Sample App")
+  		expect(page).to have_title("About Us | Ruby on Rails Tutorial Sample App")
   	end
 
   	it "should have the content 'About" do
