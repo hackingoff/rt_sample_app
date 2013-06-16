@@ -5,8 +5,16 @@ gem 'rails', '4.0.0.rc1'
 gem 'pg', '0.15.1'
 
 group :development, :test do
-#  gem 'sqlite3', '1.3.7'
+	#  gem 'sqlite3', '1.3.7' # Disabled. Using postgres now.
+  
+  # Testing Gems
+  # Rspec
   gem 'rspec-rails', '2.13.1'
+
+  # Guard automates test execution
+  gem 'guard-rspec', '2.5.0'
+
+  # Spork fails, so we won't be using it.
 end
 
 group :test do

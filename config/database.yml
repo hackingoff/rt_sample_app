@@ -1,12 +1,12 @@
 development:
 #  adapter: sqlite3
 #  database: db/development.sqlite3
-  database: db/development.postgresql
+  database: rortut_sample_dev
   adapter: postgresql
   encoding: unicode
   pool: 5
   timeout: 5000
-  username: rtsampleapp
+  username: labrat
   password:
 
 # Warning: The database defined as "test" will be erased and
@@ -15,14 +15,8 @@ development:
 test:
   adapter: postgresql
   encoding: unicode
-  database: db/test.postgresql
+  database: rortut_sample_test
   pool: 5
   timeout: 5000
-  username: rtsampleapp
+  username: labrat
   password:
-
-production:
-  adapter: postgresql
-  database: db/production.postgresql
-  pool: 5
-  timeout: 5000
