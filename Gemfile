@@ -14,7 +14,10 @@ group :development, :test do
   # Guard automates test execution
   gem 'guard-rspec', '2.5.0'
 
-  # Spork fails, so we won't be using it.
+  # Spork fails to connect to ActiveRecord?
+  gem 'spork-rails', github: 'railstutorial/spork-rails'
+  gem 'guard-spork', '1.5.0'
+  gem 'childprocess', '0.3.6'
 end
 
 group :test do
