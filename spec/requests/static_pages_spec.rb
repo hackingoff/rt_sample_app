@@ -8,12 +8,12 @@ describe "StaticPages" do
   #    response.status.should be(200)
   #  end
   #end
-  let(:title_slug) { "| Ruby on Rails Tutorial Sample App" }
-
+  let(:title_slug) { "Ruby on Rails Tutorial Sample App" }
+  
   describe "Home page" do
-  	it "should have the title 'Home'" do
+  	it "should have the base title" do
   		visit '/static_pages/home'
-  		expect(page).to have_title("Home #{title_slug}")
+  		expect(page).to have_title("#{title_slug}")
   	end
 
     it "should have the content 'Sample App'" do
@@ -25,7 +25,7 @@ describe "StaticPages" do
   describe "Help page" do
   	it "should have the title 'Help'" do
   		visit '/static_pages/help'
-  		expect(page).to have_title("Help #{title_slug}")
+  		expect(page).to have_title("Help | #{title_slug}")
   	end
 
     it "should have the content 'Help'" do
@@ -37,7 +37,7 @@ describe "StaticPages" do
   describe "About page" do
   	it "should have the title 'About Us'" do
   		visit '/static_pages/about'
-  		expect(page).to have_title("About Us #{title_slug}")
+  		expect(page).to have_title("About Us | #{title_slug}")
   	end
 
   	it "should have the content 'About Us" do
@@ -50,7 +50,7 @@ describe "StaticPages" do
   describe "Contact page" do
     it "should have the title 'Contact'" do
       visit '/static_pages/contact'
-      expect(page).to have_title("Contact #{title_slug}")
+      expect(page).to have_title("Contact | #{title_slug}")
     end
 
     it "should have the content 'Contact" do
