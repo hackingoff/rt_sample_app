@@ -1,5 +1,9 @@
 @import "bootstrap";
 
+
+/* Typed this manually. Note to self: if any discrepancies arise, check back
+   at 5.15 in http://ruby.railstutorial.org/chapters/filling-in-the-layout?version=4.0#top */
+
 $grayMediumLight: #eaeaea; /* ea, ea, cthulhu fhtagn! */
 
 /* universal */
@@ -61,14 +65,14 @@ p {
   float: left;
   margin-right: 10px;
   font-size: 1.7em;
-  color: #ddd;
+  color: white;
   text-transform: uppercase;
   letter-spacing: -1px;
   padding-top: 9px;
   font-weight: bold;
   line-height: 1;
   &:hover {
-    color: #fff;
+    color: white;
     text-decoration: none;
   }
 }
@@ -78,12 +82,12 @@ p {
 footer {
   margin-top: 45px;
   padding-top: 5px;
-  border-top: 1px solid #eaeaea;
+  border-top: 1px solid $grayMediumLight;
   color: $grayLight;
   a {
-    color: #555;
+    color: $gray;
     &:hover {
-      color: #222;
+      color: $grayDarker;
     }
   }
   small {

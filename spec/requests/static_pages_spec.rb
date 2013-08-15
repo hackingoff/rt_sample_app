@@ -8,59 +8,35 @@ describe "StaticPages" do
   #    response.status.should be(200)
   #  end
   #end
-  let(:title_slug) { "Ruby on Rails Tutorial Sample App" }
 
+  subject { page }
   describe "Home page" do
-  	it "should have the base title" do
-  		visit '/static_pages/home'
-  		expect(page).to have_title("#{title_slug}")
-  	end
-
-    it "should have the content 'Sample App'" do
-      visit '/static_pages/home'
-      expect(page).to have_content('Sample App')
-    end
-
-    it "should not have a custom title" do
-      visit '/static_pages/home'
-      expect(page).not_to have_title('| Home')
-    end
+    before { visit root_path }
+    
+    it { should have_content('Sample App') }
+    it { should have_title(full_title('')) }
+    it { should_not have_title("| Home") }
   end
 
   describe "Help page" do
-  	it "should have the title 'Help'" do
-  		visit '/static_pages/help'
-  		expect(page).to have_title("Help | #{title_slug}")
-  	end
-
-    it "should have the content 'Help'" do
-      visit '/static_pages/help'
-      expect(page).to have_content('Help')
-    end
+    before { visit help_path }
+  	
+    it { should have_title(full_title('Help')) }
+    it { should have_content('Help') }
   end
 
   describe "About page" do
-  	it "should have the title 'About Us'" do
-  		visit '/static_pages/about'
-  		expect(page).to have_title("About Us | #{title_slug}")
-  	end
-
-  	it "should have the content 'About Us" do
-  		visit '/static_pages/about'
-  		expect(page).to have_content('About Us')
-  	end
+    before { visit about_path } # translates to '/static_pages/about'
+  	
+    it { should have_title(full_title("About Us")) }
+    it { should have_content("About Us") }
   end
 
   # Exercise 3.1 from http://ruby.railstutorial.org/chapters/static-pages?version=4.0#code-serve_static_assets_redux
   describe "Contact page" do
-    it "should have the title 'Contact'" do
-      visit '/static_pages/contact'
-      expect(page).to have_title("Contact | #{title_slug}")
-    end
-
-    it "should have the content 'Contact" do
-      visit '/static_pages/contact'
-      expect(page).to have_content('Contact')
-    end
+    before { visit contact_path } # '/static_pages/contact'
+    
+    it { should have_content('Contact') }
+    it { should have_title(full_title('Contact')) }
   end
 end
